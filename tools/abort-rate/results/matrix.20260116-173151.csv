@@ -1,0 +1,5 @@
+workload,conflict_ratio,committed,cpu_seconds,net_rx_bytes,net_tx_bytes,net_total_bytes,mem_avg_mib,mem_peak_mib,run_id,summary_path
+baseline,0.1,2000,0.012195303,17177.219,14837.463,32014.682,7321.5425283214645,7356.515625,e6aca3e6-34fb-4aa4-8362-4b843fd225f9,/home/sxguo/vDesktop/geco/tools/abort-rate/results/e6aca3e6-34fb-4aa4-8362-4b843fd225f9.summary.json
+fhe,0.1,2000,0.06698569900000001,896346.6305,893533.623,1789880.2535,7677.350057829399,7833.92578125,fb2acfe3-15e2-4278-b126-6651784086e0,/home/sxguo/vDesktop/geco/tools/abort-rate/results/fb2acfe3-15e2-4278-b126-6651784086e0.summary.json
+zeestar,0.1,2000,0.102775988,1607186.1645,1487364.057,3094550.2215,7809.898982570457,7955.25390625,f04e9b1f-1ff8-4fae-9d3e-44d7d135bb3c,/home/sxguo/vDesktop/geco/tools/abort-rate/results/f04e9b1f-1ff8-4fae-9d3e-44d7d135bb3c.summary.json
+ctm_fhe,0.1,1857,0.06858328486806678,908338.1292407109,905553.7786752827,1813891.9079159936,8082.474607853938,8215.6171875,0cf09dae-f5ee-499d-9894-e58b8475f919,/home/sxguo/vDesktop/geco/tools/abort-rate/results/0cf09dae-f5ee-499d-9894-e58b8475f919.summary.json

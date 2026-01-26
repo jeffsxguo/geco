@@ -1,0 +1,9 @@
+{
+  "baseConfigPath": "configs/example.smallbank.json",
+  "matrix": {
+    "scenario.conflictRatio": [0.1, 0.5, 0.9],
+    "driver.concurrency": [20, 50, 100],
+    "driver.totalRequests": [2000]
+  }
+}
+

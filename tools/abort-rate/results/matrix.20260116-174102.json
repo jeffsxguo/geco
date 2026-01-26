@@ -1,0 +1,58 @@
+[
+  {
+    "workload": "baseline",
+    "conflict_ratio": 0.1,
+    "committed": 2000,
+    "cpu_seconds": 0.0118059275,
+    "net_rx_bytes": 17106.817,
+    "net_tx_bytes": 14771.3855,
+    "net_total_bytes": 31878.2025,
+    "mem_avg_mib": 7950.4239706825765,
+    "mem_peak_mib": 7998.546875,
+    "mem_mib_seconds": 160319.6394215119,
+    "run_id": "5dd4ce2c-dd35-4870-bbda-aeed18065311",
+    "summary_path": "/home/sxguo/vDesktop/geco/tools/abort-rate/results/5dd4ce2c-dd35-4870-bbda-aeed18065311.summary.json"
+  },
+  {
+    "workload": "fhe",
+    "conflict_ratio": 0.1,
+    "committed": 2000,
+    "cpu_seconds": 0.0671955125,
+    "net_rx_bytes": 895510.238,
+    "net_tx_bytes": 892787.6845,
+    "net_total_bytes": 1788297.9224999999,
+    "mem_avg_mib": 8239.43635411015,
+    "mem_peak_mib": 8399.38671875,
+    "mem_mib_seconds": 337717.7828230555,
+    "run_id": "d8b80990-e10d-442c-ba33-975724f98505",
+    "summary_path": "/home/sxguo/vDesktop/geco/tools/abort-rate/results/d8b80990-e10d-442c-ba33-975724f98505.summary.json"
+  },
+  {
+    "workload": "zeestar",
+    "conflict_ratio": 0.1,
+    "committed": 2000,
+    "cpu_seconds": 0.1011730585,
+    "net_rx_bytes": 1605702.398,
+    "net_tx_bytes": 1486095.6345,
+    "net_total_bytes": 3091798.0324999997,
+    "mem_avg_mib": 8389.681819422458,
+    "mem_peak_mib": 8554.30859375,
+    "mem_mib_seconds": 951553.6040731152,
+    "run_id": "1c6a90a4-964c-41bb-9d45-a4ee37fa7f5f",
+    "summary_path": "/home/sxguo/vDesktop/geco/tools/abort-rate/results/1c6a90a4-964c-41bb-9d45-a4ee37fa7f5f.summary.json"
+  },
+  {
+    "workload": "ctm_fhe",
+    "conflict_ratio": 0.1,
+    "committed": 1857,
+    "cpu_seconds": 0.0676117070543888,
+    "net_rx_bytes": 906539.0,
+    "net_tx_bytes": 903866.8922994076,
+    "net_total_bytes": 1810405.8922994076,
+    "mem_avg_mib": 8639.783728988421,
+    "mem_peak_mib": 8796.85546875,
+    "mem_mib_seconds": 320263.1458183951,
+    "run_id": "fe90242e-1d9c-4a76-9cae-887f40bdd15c",
+    "summary_path": "/home/sxguo/vDesktop/geco/tools/abort-rate/results/fe90242e-1d9c-4a76-9cae-887f40bdd15c.summary.json"
+  }
+]

@@ -1,0 +1,16 @@
+FROM golang:1.21-alpine AS build
+
+WORKDIR /src
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /out/smallbank-ccaas ./ccaas_server.go ./smallbank_shim.go ./fhe_bfv.go
+
+FROM alpine:3.19
+RUN adduser -D -u 10001 app
+USER app
+WORKDIR /app
+COPY --from=build /out/smallbank-ccaas /app/smallbank-ccaas
+EXPOSE 9999
+ENV CHAINCODE_SERVER_ADDRESS=0.0.0.0:9999
+ENTRYPOINT ["/app/smallbank-ccaas"]

@@ -1,0 +1,24 @@
+{
+  "name": "geco-abort-rate-runner",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Measure abort rate under different workloads and conflict scenarios on Hyperledger Fabric",
+  "license": "UNLICENSED",
+  "main": "src/run.js",
+  "scripts": {
+    "run": "node src/run.js --config configs/example.smallbank.json",
+    "init-ledger": "node src/init-ledger.js --config configs/example.smallbank.json",
+    "sweep": "node src/sweep.js --config configs/example.sweep.smallbank.json",
+    "test": "node --test",
+    "demo-ctm": "node src/demo-ctm.js",
+    "dump-merge-plan": "node src/dump-merge-plan.js",
+    "inspect-merged": "node src/inspect-merged.js"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.12.2",
+    "@hyperledger/fabric-gateway": "^1.7.0",
+    "seedrandom": "^3.0.5",
+    "uuid": "^9.0.1",
+    "yargs": "^17.7.2"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "run_id": "bcd06c57-12c7-436e-aee1-3e2d5d671d17",
+  "meta": {
+    "run_id": "bcd06c57-12c7-436e-aee1-3e2d5d671d17",
+    "system": "HLF-local-windowed-baseline",
+    "workload": "smallbank_transfer",
+    "scenario": "hot_accounts",
+    "conflict_ratio": 0.5,
+    "seed": 42,
+    "concurrency": 10,
+    "total_requests": 200,
+    "window": {
+      "type": "count",
+      "size": 50
+    },
+    "window_merge": "none"
+  },
+  "summary": {
+    "attempts": {
+      "total": 310,
+      "committed": 199,
+      "aborted": 111,
+      "abort_rate_attempt": 0.3580645161290323,
+      "abort_reasons": {
+        "abort_mvcc": 111
+      }
+    },
+    "requests": {
+      "total": 200,
+      "failed": 1,
+      "abort_prob_request": 0.005,
+      "retry_attempts": {
+        "p50": 1,
+        "p90": 3,
+        "p99": 8,
+        "max": 10
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "run_id": "84de8c83-49ea-4e53-aeb0-a9f0e1d8734c",
+  "meta": {
+    "run_id": "84de8c83-49ea-4e53-aeb0-a9f0e1d8734c",
+    "system": "HLF-baseline-cr0.5-n2000-cr0.5",
+    "workload": "smallbank_transfer",
+    "scenario": "hot_accounts",
+    "conflict_ratio": 0.5,
+    "seed": 42,
+    "concurrency": 10,
+    "total_requests": 2000,
+    "window": null,
+    "window_merge": "none"
+  },
+  "summary": {
+    "meta": {
+      "original_total_requests": 2000
+    },
+    "stages": {
+      "p_ms": {
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "e_ms": {
+        "p50": 19,
+        "p95": 29,
+        "p99": 36
+      },
+      "o_ms": {
+        "p50": 12,
+        "p95": 24,
+        "p99": 30
+      },
+      "v_ms": {
+        "p50": 46,
+        "p95": 63,
+        "p99": 70
+      },
+      "averages": {
+        "p_ms": 0,
+        "e_ms": 19.35850956696878,
+        "o_ms": 13.623363544813696,
+        "v_ms": 50.70745216515609
+      }
+    },
+    "total_latency_ms": {
+      "avg": 84.04582074521652,
+      "p99": 117
+    },
+    "attempts": {
+      "total": 3274,
+      "committed": 1986,
+      "aborted": 1288,
+      "abort_rate_attempt": 0.3934025656689065,
+      "abort_reasons": {
+        "abort_mvcc": 1288
+      }
+    },
+    "requests": {
+      "total": 2000,
+      "failed": 14,
+      "abort_prob_request": 0.007,
+      "retry_attempts": {
+        "p50": 1,
+        "p90": 3,
+        "p99": 10,
+        "max": 10
+      }
+    },
+    "original": {
+      "total": 2000,
+      "no_retry": {
+        "aborted": 461,
+        "abort_rate": 0.2305
+      },
+      "with_retry": {
+        "abort_events": 1288,
+        "abort_events_per_request": 0.644
+      }
+    },
+    "practical_no_retry": {
+      "aborted_original_equiv": 461,
+      "abort_rate": 0.2305,
+      "merged_requests": 2000,
+      "merged_requests_aborted": 461,
+      "merged_abort_rate": 0.2305
+    },
+    "practical_with_retry": {
+      "abort_events_original_equiv": 1288,
+      "abort_events_per_original": 0.644
+    }
+  }
+}

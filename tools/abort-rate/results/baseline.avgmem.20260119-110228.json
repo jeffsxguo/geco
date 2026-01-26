@@ -1,0 +1,41 @@
+[
+  {
+    "workload": "baseline",
+    "conflict_ratio": 0.1,
+    "committed": 2000,
+    "cpu_seconds": 0.011809611000000001,
+    "net_rx_bytes": 17193.3515,
+    "net_tx_bytes": 14854.4565,
+    "net_total_bytes": 32047.808,
+    "mem_avg_mib": 7530.810863140261,
+    "mem_peak_mib": 7594.14453125,
+    "run_id": "c1f297a1-dfef-457b-aa2f-d73a05679476",
+    "summary_path": "/home/sxguo/vDesktop/geco/tools/abort-rate/results/c1f297a1-dfef-457b-aa2f-d73a05679476.summary.json"
+  },
+  {
+    "workload": "baseline",
+    "conflict_ratio": 0.5,
+    "committed": 1983,
+    "cpu_seconds": 0.019341420574886536,
+    "net_rx_bytes": 27860.65607665154,
+    "net_tx_bytes": 24110.758951084215,
+    "net_total_bytes": 51971.415027735755,
+    "mem_avg_mib": 7495.304302878607,
+    "mem_peak_mib": 7539.5546875,
+    "run_id": "a6536544-e4dc-4fa1-97ee-ca64dd343b38",
+    "summary_path": "/home/sxguo/vDesktop/geco/tools/abort-rate/results/a6536544-e4dc-4fa1-97ee-ca64dd343b38.summary.json"
+  },
+  {
+    "workload": "baseline",
+    "conflict_ratio": 0.9,
+    "committed": 1917,
+    "cpu_seconds": 0.031453494001043296,
+    "net_rx_bytes": 45229.35732916015,
+    "net_tx_bytes": 39142.52373500261,
+    "net_total_bytes": 84371.88106416276,
+    "mem_avg_mib": 7518.740868951527,
+    "mem_peak_mib": 7544.9140625,
+    "run_id": "4723a97e-1248-45ff-82eb-d647b712a3ed",
+    "summary_path": "/home/sxguo/vDesktop/geco/tools/abort-rate/results/4723a97e-1248-45ff-82eb-d647b712a3ed.summary.json"
+  }
+]

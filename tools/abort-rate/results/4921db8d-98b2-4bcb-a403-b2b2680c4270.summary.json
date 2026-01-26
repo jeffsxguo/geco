@@ -1,0 +1,94 @@
+{
+  "run_id": "4921db8d-98b2-4bcb-a403-b2b2680c4270",
+  "meta": {
+    "run_id": "4921db8d-98b2-4bcb-a403-b2b2680c4270",
+    "system": "HLF-fhe-zeestar-insecure-cr0.5-n2000-cr0.9",
+    "workload": "smallbank_transfer_fhe_zeestar",
+    "scenario": "hot_accounts",
+    "conflict_ratio": 0.9,
+    "seed": 42,
+    "concurrency": 10,
+    "total_requests": 2000,
+    "window": null,
+    "window_merge": "none"
+  },
+  "summary": {
+    "meta": {
+      "original_total_requests": 2000
+    },
+    "stages": {
+      "p_ms": {
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "e_ms": {
+        "p50": 60,
+        "p95": 80,
+        "p99": 89
+      },
+      "o_ms": {
+        "p50": 12,
+        "p95": 15,
+        "p99": 18
+      },
+      "v_ms": {
+        "p50": 521,
+        "p95": 600,
+        "p99": 656
+      },
+      "averages": {
+        "p_ms": 0,
+        "e_ms": 52.55,
+        "o_ms": 11.981770833333334,
+        "v_ms": 499.0859375
+      }
+    },
+    "total_latency_ms": {
+      "avg": 564.3239583333333,
+      "p99": 708
+    },
+    "attempts": {
+      "total": 6169,
+      "committed": 1920,
+      "aborted": 4249,
+      "abort_rate_attempt": 0.6887664127087049,
+      "abort_reasons": {
+        "abort_mvcc": 4249
+      }
+    },
+    "requests": {
+      "total": 2000,
+      "failed": 80,
+      "abort_prob_request": 0.04,
+      "retry_attempts": {
+        "p50": 2,
+        "p90": 7,
+        "p99": 10,
+        "max": 10
+      }
+    },
+    "original": {
+      "total": 2000,
+      "no_retry": {
+        "aborted": 1194,
+        "abort_rate": 0.597
+      },
+      "with_retry": {
+        "abort_events": 4249,
+        "abort_events_per_request": 2.1245
+      }
+    },
+    "practical_no_retry": {
+      "aborted_original_equiv": 1194,
+      "abort_rate": 0.597,
+      "merged_requests": 2000,
+      "merged_requests_aborted": 1194,
+      "merged_abort_rate": 0.597
+    },
+    "practical_with_retry": {
+      "abort_events_original_equiv": 4249,
+      "abort_events_per_original": 2.1245
+    }
+  }
+}

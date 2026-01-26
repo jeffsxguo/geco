@@ -1,0 +1,104 @@
+name: geco-hlf
+
+services:
+  orderer.example.com:
+    image: hyperledger/fabric-orderer:2.5
+    hostname: orderer.example.com
+    environment:
+      - FABRIC_LOGGING_SPEC=INFO
+      - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+      - ORDERER_GENERAL_LISTENPORT=7050
+      - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
+      - ORDERER_GENERAL_LOCALMSPDIR=/var/hyperledger/orderer/msp
+      - ORDERER_GENERAL_GENESISMETHOD=file
+      - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
+      - ORDERER_GENERAL_TLS_ENABLED=true
+      - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
+      - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
+      - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric
+    command: orderer
+    ports:
+      - "7050:7050"
+    volumes:
+      - ./artifacts/channel-artifacts/genesis.block:/var/hyperledger/orderer/orderer.genesis.block:ro
+      - ./artifacts/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/var/hyperledger/orderer/msp:ro
+      - ./artifacts/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls:/var/hyperledger/orderer/tls:ro
+
+  peer0.org1.example.com:
+    image: hyperledger/fabric-peer:2.5
+    hostname: peer0.org1.example.com
+    environment:
+      - FABRIC_LOGGING_SPEC=INFO
+      - CORE_PEER_ID=peer0.org1.example.com
+      - CORE_PEER_ADDRESS=peer0.org1.example.com:7051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:7051
+      - CORE_PEER_CHAINCODEADDRESS=peer0.org1.example.com:7052
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.example.com:7051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org1.example.com:7051
+      - CORE_PEER_LOCALMSPID=Org1MSP
+      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/msp
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
+      - CORE_VM_ENDPOINT=unix:///var/run/docker.sock
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=geco-hlf_default
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+    command: peer node start
+    ports:
+      - "7051:7051"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/run/docker.sock
+      - ./artifacts/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/fabric/msp:ro
+      - ./artifacts/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls:/etc/hyperledger/fabric/tls:ro
+      - peer0.org1.example.com:/var/hyperledger/production
+    depends_on:
+      - orderer.example.com
+
+  cli:
+    image: hyperledger/fabric-tools:2.5
+    hostname: cli
+    tty: true
+    stdin_open: true
+    environment:
+      - FABRIC_LOGGING_SPEC=INFO
+      - FABRIC_CFG_PATH=/etc/hyperledger/fabric/config
+      - CORE_PEER_ADDRESS=peer0.org1.example.com:7051
+      - CORE_PEER_LOCALMSPID=Org1MSP
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
+      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    working_dir: /etc/hyperledger/fabric
+    volumes:
+      - ./artifacts:/etc/hyperledger/fabric
+      - ./config:/etc/hyperledger/fabric/config
+      - ./configtx:/etc/hyperledger/fabric/configtx:ro
+      - ../../chaincode:/opt/chaincode:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/run/docker.sock
+    depends_on:
+      - peer0.org1.example.com
+      - orderer.example.com
+
+  smallbank-ccaas:
+    build:
+      context: ../../chaincode/smallbank-go
+      dockerfile: Dockerfile.ccaas
+    image: geco/smallbank-ccaas:local
+    hostname: smallbank-ccaas
+    env_file:
+      - ./ccaas.env
+    environment:
+      - CHAINCODE_ID=${SMALLBANK_CCID:-}
+      - CHAINCODE_SERVER_ADDRESS=0.0.0.0:9999
+      - GECO_FHE_PARAM_SET=${GECO_FHE_PARAM_SET:-insecure}
+      - GECO_FHE_PUBKEY_B64=${GECO_FHE_PUBKEY_B64:-}
+    ports:
+      - "9999:9999"
+
+volumes:
+  peer0.org1.example.com:

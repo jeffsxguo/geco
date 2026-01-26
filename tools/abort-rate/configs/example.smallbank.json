@@ -1,0 +1,43 @@
+{
+  "runId": "",
+  "outputDir": "results",
+  "system": "HLF",
+  "fabric": {
+    "peerEndpoint": "localhost:7051",
+    "peerHostAlias": "",
+    "tlsCertPath": "/path/to/peer/tls/ca.crt",
+    "mspId": "Org1MSP",
+    "certPath": "/path/to/user/signcert.pem",
+    "keyPath": "/path/to/user/keystore/priv_sk",
+    "channelName": "mychannel",
+    "chaincodeName": "smallbank"
+  },
+  "workload": {
+    "name": "smallbank_transfer",
+    "numAccounts": 100000,
+    "initialBalance": 1000000,
+    "amount": {
+      "type": "fixed",
+      "value": 1
+    }
+  },
+  "scenario": {
+    "name": "hot_accounts",
+    "hotAccountFraction": 0.01,
+    "conflictRatio": 0.5,
+    "seed": 42
+  },
+  "driver": {
+    "mode": "closed_loop",
+    "concurrency": 50,
+    "totalRequests": 2000,
+    "requestTimeoutMs": 60000,
+    "attemptTimeoutMs": 15000,
+    "maxAttemptsPerRequest": 10,
+    "backoffMs": {
+      "type": "fixed",
+      "value": 0
+    }
+  }
+}
+

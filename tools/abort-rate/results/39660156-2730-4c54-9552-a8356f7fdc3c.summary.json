@@ -1,0 +1,82 @@
+{
+  "run_id": "39660156-2730-4c54-9552-a8356f7fdc3c",
+  "summary": {
+    "meta": {
+      "original_total_requests": 2000
+    },
+    "stages": {
+      "p_ms": {
+        "p50": 0.256021,
+        "p95": 0.256021,
+        "p99": 0.256021
+      },
+      "e_ms": {
+        "p50": 63.743979,
+        "p95": 63.743979,
+        "p99": 63.743979
+      },
+      "o_ms": {
+        "p50": 51,
+        "p95": 51,
+        "p99": 51
+      },
+      "v_ms": {
+        "p50": 10111,
+        "p95": 10111,
+        "p99": 10111
+      },
+      "averages": {
+        "p_ms": 0.256021,
+        "e_ms": 63.743979,
+        "o_ms": 51,
+        "v_ms": 10111
+      }
+    },
+    "total_latency_ms": {
+      "avg": 10228,
+      "p99": 10228
+    },
+    "attempts": {
+      "total": 355,
+      "committed": 1,
+      "aborted": 354,
+      "abort_rate_attempt": 0.9971830985915493,
+      "abort_reasons": {
+        "abort_unknown": 354
+      }
+    },
+    "requests": {
+      "total": 30,
+      "failed": 29,
+      "abort_prob_request": 0.9666666666666667,
+      "retry_attempts": {
+        "p50": 10,
+        "p90": 10,
+        "p99": 10,
+        "max": 10
+      }
+    },
+    "original": {
+      "total": 30,
+      "no_retry": {
+        "aborted": 29,
+        "abort_rate": 0.9666666666666667
+      },
+      "with_retry": {
+        "abort_events": 290,
+        "abort_events_per_request": 9.666666666666666
+      }
+    },
+    "practical_no_retry": {
+      "aborted_original_equiv": 39,
+      "abort_rate": 0.0195,
+      "merged_requests": 40,
+      "merged_requests_aborted": 39,
+      "merged_abort_rate": 0.975
+    },
+    "practical_with_retry": {
+      "abort_events_original_equiv": 354,
+      "abort_events_per_original": 0.177
+    }
+  }
+}

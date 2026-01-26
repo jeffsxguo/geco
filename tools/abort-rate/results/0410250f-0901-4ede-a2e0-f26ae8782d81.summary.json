@@ -1,0 +1,65 @@
+{
+  "run_id": "0410250f-0901-4ede-a2e0-f26ae8782d81",
+  "meta": {
+    "run_id": "0410250f-0901-4ede-a2e0-f26ae8782d81",
+    "system": "HLF-stock-baseline-window50-noretry-cr0.5",
+    "workload": "stock_trade",
+    "scenario": "hot_accounts",
+    "conflict_ratio": 0.5,
+    "seed": 42,
+    "concurrency": 20,
+    "total_requests": 2000,
+    "window": {
+      "type": "count",
+      "size": 50
+    },
+    "window_merge": "none"
+  },
+  "summary": {
+    "meta": {
+      "original_total_requests": 2000
+    },
+    "attempts": {
+      "total": 2000,
+      "committed": 1126,
+      "aborted": 874,
+      "abort_rate_attempt": 0.437,
+      "abort_reasons": {
+        "abort_mvcc": 874
+      }
+    },
+    "requests": {
+      "total": 2000,
+      "failed": 874,
+      "abort_prob_request": 0.437,
+      "retry_attempts": {
+        "p50": 1,
+        "p90": 1,
+        "p99": 1,
+        "max": 1
+      }
+    },
+    "original": {
+      "total": 2000,
+      "no_retry": {
+        "aborted": 874,
+        "abort_rate": 0.437
+      },
+      "with_retry": {
+        "abort_events": 874,
+        "abort_events_per_request": 0.437
+      }
+    },
+    "practical_no_retry": {
+      "aborted_original_equiv": 874,
+      "abort_rate": 0.437,
+      "merged_requests": 2000,
+      "merged_requests_aborted": 874,
+      "merged_abort_rate": 0.437
+    },
+    "practical_with_retry": {
+      "abort_events_original_equiv": 874,
+      "abort_events_per_original": 0.437
+    }
+  }
+}

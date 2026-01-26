@@ -1,0 +1,94 @@
+{
+  "run_id": "34b0562d-9ac7-4b3a-8a0f-7dbed8406a2c",
+  "meta": {
+    "run_id": "34b0562d-9ac7-4b3a-8a0f-7dbed8406a2c",
+    "system": "HLF-fhe-zeestar-insecure-cr0.5-n2000-cr0.1",
+    "workload": "smallbank_transfer_fhe_zeestar",
+    "scenario": "hot_accounts",
+    "conflict_ratio": 0.1,
+    "seed": 42,
+    "concurrency": 10,
+    "total_requests": 2000,
+    "window": null,
+    "window_merge": "none"
+  },
+  "summary": {
+    "meta": {
+      "original_total_requests": 2000
+    },
+    "stages": {
+      "p_ms": {
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "e_ms": {
+        "p50": 22,
+        "p95": 76,
+        "p99": 85
+      },
+      "o_ms": {
+        "p50": 12,
+        "p95": 15,
+        "p99": 17
+      },
+      "v_ms": {
+        "p50": 584,
+        "p95": 1155,
+        "p99": 1270
+      },
+      "averages": {
+        "p_ms": 0,
+        "e_ms": 33.3055,
+        "o_ms": 12.1605,
+        "v_ms": 639.221
+      }
+    },
+    "total_latency_ms": {
+      "avg": 685.622,
+      "p99": 1335
+    },
+    "attempts": {
+      "total": 2150,
+      "committed": 2000,
+      "aborted": 150,
+      "abort_rate_attempt": 0.06976744186046512,
+      "abort_reasons": {
+        "abort_mvcc": 150
+      }
+    },
+    "requests": {
+      "total": 2000,
+      "failed": 0,
+      "abort_prob_request": 0,
+      "retry_attempts": {
+        "p50": 1,
+        "p90": 1,
+        "p99": 3,
+        "max": 5
+      }
+    },
+    "original": {
+      "total": 2000,
+      "no_retry": {
+        "aborted": 117,
+        "abort_rate": 0.0585
+      },
+      "with_retry": {
+        "abort_events": 150,
+        "abort_events_per_request": 0.075
+      }
+    },
+    "practical_no_retry": {
+      "aborted_original_equiv": 117,
+      "abort_rate": 0.0585,
+      "merged_requests": 2000,
+      "merged_requests_aborted": 117,
+      "merged_abort_rate": 0.0585
+    },
+    "practical_with_retry": {
+      "abort_events_original_equiv": 150,
+      "abort_events_per_original": 0.075
+    }
+  }
+}

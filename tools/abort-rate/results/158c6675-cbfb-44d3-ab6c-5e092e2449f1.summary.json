@@ -1,0 +1,94 @@
+{
+  "run_id": "158c6675-cbfb-44d3-ab6c-5e092e2449f1",
+  "meta": {
+    "run_id": "158c6675-cbfb-44d3-ab6c-5e092e2449f1",
+    "system": "HLF-fhe-insecure-cr0.5-n2000-cr0.9",
+    "workload": "smallbank_transfer_fhe",
+    "scenario": "hot_accounts",
+    "conflict_ratio": 0.9,
+    "seed": 42,
+    "concurrency": 10,
+    "total_requests": 2000,
+    "window": null,
+    "window_merge": "none"
+  },
+  "summary": {
+    "meta": {
+      "original_total_requests": 2000
+    },
+    "stages": {
+      "p_ms": {
+        "p50": 0.559323,
+        "p95": 1.358769,
+        "p99": 1.712947
+      },
+      "e_ms": {
+        "p50": 26.327604,
+        "p95": 73.521766,
+        "p99": 88.459121
+      },
+      "o_ms": {
+        "p50": 10,
+        "p95": 15,
+        "p99": 20
+      },
+      "v_ms": {
+        "p50": 153,
+        "p95": 229,
+        "p99": 268
+      },
+      "averages": {
+        "p_ms": 0.6805035355106263,
+        "e_ms": 33.762212897874505,
+        "o_ms": 10.359253499222396,
+        "v_ms": 153.11715914981855
+      }
+    },
+    "total_latency_ms": {
+      "avg": 198.2649040953862,
+      "p99": 310
+    },
+    "attempts": {
+      "total": 5793,
+      "committed": 1929,
+      "aborted": 3864,
+      "abort_rate_attempt": 0.6670119109269809,
+      "abort_reasons": {
+        "abort_mvcc": 3864
+      }
+    },
+    "requests": {
+      "total": 2000,
+      "failed": 71,
+      "abort_prob_request": 0.0355,
+      "retry_attempts": {
+        "p50": 2,
+        "p90": 7,
+        "p99": 10,
+        "max": 10
+      }
+    },
+    "original": {
+      "total": 2000,
+      "no_retry": {
+        "aborted": 1118,
+        "abort_rate": 0.559
+      },
+      "with_retry": {
+        "abort_events": 3864,
+        "abort_events_per_request": 1.932
+      }
+    },
+    "practical_no_retry": {
+      "aborted_original_equiv": 1118,
+      "abort_rate": 0.559,
+      "merged_requests": 2000,
+      "merged_requests_aborted": 1118,
+      "merged_abort_rate": 0.559
+    },
+    "practical_with_retry": {
+      "abort_events_original_equiv": 3864,
+      "abort_events_per_original": 1.932
+    }
+  }
+}

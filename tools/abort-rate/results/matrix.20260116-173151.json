@@ -1,0 +1,54 @@
+[
+  {
+    "workload": "baseline",
+    "conflict_ratio": 0.1,
+    "committed": 2000,
+    "cpu_seconds": 0.012195303,
+    "net_rx_bytes": 17177.219,
+    "net_tx_bytes": 14837.463,
+    "net_total_bytes": 32014.682,
+    "mem_avg_mib": 7321.5425283214645,
+    "mem_peak_mib": 7356.515625,
+    "run_id": "e6aca3e6-34fb-4aa4-8362-4b843fd225f9",
+    "summary_path": "/home/sxguo/vDesktop/geco/tools/abort-rate/results/e6aca3e6-34fb-4aa4-8362-4b843fd225f9.summary.json"
+  },
+  {
+    "workload": "fhe",
+    "conflict_ratio": 0.1,
+    "committed": 2000,
+    "cpu_seconds": 0.06698569900000001,
+    "net_rx_bytes": 896346.6305,
+    "net_tx_bytes": 893533.623,
+    "net_total_bytes": 1789880.2535,
+    "mem_avg_mib": 7677.350057829399,
+    "mem_peak_mib": 7833.92578125,
+    "run_id": "fb2acfe3-15e2-4278-b126-6651784086e0",
+    "summary_path": "/home/sxguo/vDesktop/geco/tools/abort-rate/results/fb2acfe3-15e2-4278-b126-6651784086e0.summary.json"
+  },
+  {
+    "workload": "zeestar",
+    "conflict_ratio": 0.1,
+    "committed": 2000,
+    "cpu_seconds": 0.102775988,
+    "net_rx_bytes": 1607186.1645,
+    "net_tx_bytes": 1487364.057,
+    "net_total_bytes": 3094550.2215,
+    "mem_avg_mib": 7809.898982570457,
+    "mem_peak_mib": 7955.25390625,
+    "run_id": "f04e9b1f-1ff8-4fae-9d3e-44d7d135bb3c",
+    "summary_path": "/home/sxguo/vDesktop/geco/tools/abort-rate/results/f04e9b1f-1ff8-4fae-9d3e-44d7d135bb3c.summary.json"
+  },
+  {
+    "workload": "ctm_fhe",
+    "conflict_ratio": 0.1,
+    "committed": 1857,
+    "cpu_seconds": 0.06858328486806678,
+    "net_rx_bytes": 908338.1292407109,
+    "net_tx_bytes": 905553.7786752827,
+    "net_total_bytes": 1813891.9079159936,
+    "mem_avg_mib": 8082.474607853938,
+    "mem_peak_mib": 8215.6171875,
+    "run_id": "0cf09dae-f5ee-499d-9894-e58b8475f919",
+    "summary_path": "/home/sxguo/vDesktop/geco/tools/abort-rate/results/0cf09dae-f5ee-499d-9894-e58b8475f919.summary.json"
+  }
+]

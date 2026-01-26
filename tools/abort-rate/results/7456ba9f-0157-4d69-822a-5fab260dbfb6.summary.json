@@ -1,0 +1,65 @@
+{
+  "run_id": "7456ba9f-0157-4d69-822a-5fab260dbfb6",
+  "meta": {
+    "run_id": "7456ba9f-0157-4d69-822a-5fab260dbfb6",
+    "system": "HLF-stock-key-then-value-window50-noretry-cr0.5",
+    "workload": "stock_trade",
+    "scenario": "hot_accounts",
+    "conflict_ratio": 0.5,
+    "seed": 42,
+    "concurrency": 20,
+    "total_requests": 2000,
+    "window": {
+      "type": "count",
+      "size": 50
+    },
+    "window_merge": "key_then_value"
+  },
+  "summary": {
+    "meta": {
+      "original_total_requests": 2000
+    },
+    "attempts": {
+      "total": 1317,
+      "committed": 992,
+      "aborted": 325,
+      "abort_rate_attempt": 0.24677296886864086,
+      "abort_reasons": {
+        "abort_mvcc": 325
+      }
+    },
+    "requests": {
+      "total": 1317,
+      "failed": 325,
+      "abort_prob_request": 0.24677296886864086,
+      "retry_attempts": {
+        "p50": 1,
+        "p90": 1,
+        "p99": 1,
+        "max": 1
+      }
+    },
+    "original": {
+      "total": 1317,
+      "no_retry": {
+        "aborted": 325,
+        "abort_rate": 0.24677296886864086
+      },
+      "with_retry": {
+        "abort_events": 325,
+        "abort_events_per_request": 0.24677296886864086
+      }
+    },
+    "practical_no_retry": {
+      "aborted_original_equiv": 429,
+      "abort_rate": 0.2145,
+      "merged_requests": 1317,
+      "merged_requests_aborted": 325,
+      "merged_abort_rate": 0.24677296886864086
+    },
+    "practical_with_retry": {
+      "abort_events_original_equiv": 429,
+      "abort_events_per_original": 0.2145
+    }
+  }
+}

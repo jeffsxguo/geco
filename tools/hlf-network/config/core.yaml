@@ -1,0 +1,30 @@
+peer:
+  id: cli
+  networkId: dev
+  address: peer0.org1.example.com:7051
+  listenAddress: 0.0.0.0:7051
+  localMspId: Org1MSP
+  mspConfigPath: /etc/hyperledger/fabric/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+  tls:
+    enabled: true
+  bccsp:
+    default: SW
+    sw:
+      hash: SHA2
+      security: 256
+      filekeystore:
+        keystore: /etc/hyperledger/fabric/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore
+
+chaincode:
+  executetimeout: 30s
+
+logging:
+  spec: INFO
+
+bccsp:
+  default: SW
+  sw:
+    hash: SHA2
+    security: 256
+    filekeystore:
+      keystore: /etc/hyperledger/fabric/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore

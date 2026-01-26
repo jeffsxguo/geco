@@ -1,0 +1,51 @@
+{
+  "runId": "",
+  "outputDir": "results",
+  "system": "HLF-ctm-window50-retry-amountvar-cr0.5",
+  "fabric": {
+    "peerEndpoint": "localhost:7051",
+    "peerHostAlias": "peer0.org1.example.com",
+    "tlsCertPath": "../hlf-network/artifacts/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt",
+    "mspId": "Org1MSP",
+    "certPath": "../hlf-network/artifacts/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem",
+    "keyPath": "../hlf-network/artifacts/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/priv_sk",
+    "channelName": "mychannel",
+    "chaincodeName": "smallbank"
+  },
+  "workload": {
+    "name": "smallbank_transfer",
+    "numAccounts": 1000,
+    "initialBalance": 1000000,
+    "amount": {
+      "type": "uniform_int",
+      "min": 1,
+      "max": 100
+    }
+  },
+  "scenario": {
+    "name": "hot_accounts",
+    "hotAccountFraction": 0.01,
+    "conflictRatio": 0.5,
+    "seed": 42
+  },
+  "driver": {
+    "mode": "closed_loop",
+    "window": {
+      "type": "count",
+      "size": 50
+    },
+    "windowMerge": {
+      "type": "ctm"
+    },
+    "concurrency": 20,
+    "totalRequests": 2000,
+    "requestTimeoutMs": 60000,
+    "attemptTimeoutMs": 15000,
+    "maxAttemptsPerRequest": 10,
+    "backoffMs": {
+      "type": "fixed",
+      "value": 0
+    }
+  }
+}
+
